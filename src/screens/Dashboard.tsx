@@ -23,6 +23,7 @@ const hospital1 = require('../../assets/hospital1.jpg');
 const hospital2 = require('../../assets/hospital2.jpg');
 const hospital3 = require('../../assets/hospital3.jpg');
 const hospital4 = require('../../assets/hospital4.jpg');
+const doctorM = require('../../assets/doctorM.png');
 
 type MyHealthScreenProps = {
   navigation: NavigationProp<RootStackParamList>;
@@ -91,8 +92,11 @@ const MyHealthScreen: React.FC<MyHealthScreenProps> = ({ navigation }) => {
         <View style={styles.recentDoctorContainer}>
           <Text style={styles.recentDoctorTitle}>Recent Doctor</Text>
           <View style={styles.recentDoctorImageContainer}>
-            <Image source={imagePathUser} style={styles.recentDoctorImage} />
+            <Image source={doctorM} style={styles.recentDoctorImage} />
           </View>
+          <TouchableOpacity style={styles.recentDoctorButton} onPress={() => navigation.navigate('Doctor')}>
+            <Text style={styles.recentDoctorButtonText}>View Details</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.hospitalContainer}>
@@ -228,10 +232,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderRadius: 10,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.1,
     shadowRadius: 5,
-    elevation: 5,
+    elevation: 3,
   },
   iconLarge: {
     width: 40,
@@ -240,29 +243,34 @@ const styles = StyleSheet.create({
   },
   infoText: {
     fontSize: 16,
-    fontWeight: 'bold',
     color: '#333333',
   },
   greeting: {
-    marginVertical: 20,
-    alignItems: 'center',
+    width: '90%',
+    marginTop: 20,
+    backgroundColor: '#ffffff',
+    padding: 20,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
+    elevation: 3,
   },
   greetingText: {
-    fontSize: 24,
-    textAlign: 'center',
+    fontSize: 18,
+    fontWeight: 'bold',
     color: '#333333',
   },
   calendar: {
     width: '90%',
+    marginTop: 20,
     backgroundColor: '#ffffff',
     borderRadius: 10,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.1,
     shadowRadius: 5,
-    elevation: 5,
-    padding: 15,
-    marginTop: 20,
+    elevation: 3,
+    padding: 10,
   },
   calendarHeader: {
     flexDirection: 'row',
@@ -276,26 +284,24 @@ const styles = StyleSheet.create({
   },
   calendarShowAll: {
     fontSize: 14,
-    color: '#0066cc',
+    color: '#007bff',
   },
   calendarImg: {
     width: '100%',
-    height: 170,
+    height: 200,
     marginTop: 10,
-    borderRadius: 10,
   },
   recentDoctorContainer: {
-    marginTop: 20,
     width: '90%',
+    marginTop: 20,
     backgroundColor: '#ffffff',
+    padding: 20,
     borderRadius: 10,
-    padding: 15,
-    alignItems: 'center',
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.1,
     shadowRadius: 5,
-    elevation: 5,
+    elevation: 3,
+    alignItems: 'center',
   },
   recentDoctorTitle: {
     fontSize: 18,
@@ -304,31 +310,36 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   recentDoctorImageContainer: {
-    width: 100,
-    height: 100,
-    borderRadius: 10,
-    overflow: 'hidden',
-    backgroundColor: '#f4f4f9',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  recentDoctorImage: {
     width: 80,
     height: 80,
     borderRadius: 40,
+    overflow: 'hidden',
+    marginBottom: 10,
+  },
+  recentDoctorImage: {
+    width: '100%',
+    height: '100%',
+  },
+  recentDoctorButton: {
+    backgroundColor: '#007bff',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+  },
+  recentDoctorButtonText: {
+    color: '#ffffff',
+    fontSize: 16,
   },
   hospitalContainer: {
     width: '90%',
     marginTop: 20,
     backgroundColor: '#ffffff',
+    padding: 20,
     borderRadius: 10,
-    padding: 15,
-    alignItems: 'center',
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.1,
     shadowRadius: 5,
-    elevation: 5,
+    elevation: 3,
   },
   hospitalTitle: {
     fontSize: 18,
@@ -339,43 +350,42 @@ const styles = StyleSheet.create({
   hospitalImages: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '100%',
-    flexWrap: 'wrap',
   },
   hospitalImage: {
     width: '23%',
-    height: 100,
-    margin: '1%',
+    height: 80,
     borderRadius: 10,
   },
   radioButtonsContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    marginTop: 10,
+  },
+  radioButton: {
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    backgroundColor: '#007bff',
+    marginHorizontal: 5,
+  },
+  mapContainer: {
     width: '90%',
     marginTop: 20,
   },
-  radioButton: {
-    width: 20,
-    height: 20,
+  mapImg: {
+    width: '100%',
+    height: 200,
     borderRadius: 10,
-    borderColor: '#333333',
-    borderWidth: 1,
-  },
-  radioButtonText: {
-    fontSize: 16,
-    color: '#333333',
   },
   todoContainer: {
     width: '90%',
     marginTop: 20,
-    padding: 15,
     backgroundColor: '#ffffff',
+    padding: 20,
     borderRadius: 10,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.1,
     shadowRadius: 5,
-    elevation: 5,
+    elevation: 3,
   },
   todoTitle: {
     fontSize: 18,
@@ -385,7 +395,7 @@ const styles = StyleSheet.create({
   },
   showAll: {
     fontSize: 14,
-    color: '#0066cc',
+    color: '#007bff',
     marginBottom: 10,
   },
   input: {
@@ -397,55 +407,45 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   addButton: {
-    backgroundColor: '#0066cc',
+    backgroundColor: '#007bff',
     paddingVertical: 10,
+    paddingHorizontal: 20,
     borderRadius: 5,
     alignItems: 'center',
-    marginBottom: 10,
   },
   addButtonText: {
     color: '#ffffff',
-    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  radioButtonText: {
+    marginLeft: 10,
+    fontSize: 16,
+    color: '#333333',
   },
   navset: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
     position: 'absolute',
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: '#e3e8e5',
-    paddingVertical: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    zIndex: 1,
+    backgroundColor: 'white',
+    height: 70,
+    elevation: 5,
   },
   navItem: {
     alignItems: 'center',
+    justifyContent: 'center',
   },
   navIcon: {
-    width: 25,
-    height: 25,
+    width: 24,
+    height: 24,
   },
   navText: {
-    marginTop: 5,
+    fontSize: 12,
     color: '#333333',
-  },
-  mapContainer: {
-    width: '90%',
-    height: 200,
-    backgroundColor: '#ffffff',
-    borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 5,
-    elevation: 5,
-    marginTop: 20,
-    overflow: 'hidden',
-  },
-  mapImg: {
-    width: '100%',
-    height: '100%',
+    marginTop: 5,
   },
 });
 
