@@ -153,7 +153,7 @@ const MyHealthScreen: React.FC<MyHealthScreenProps> = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Doctor')}>
           <Image source={imagePathDoctor} style={styles.navIcon} />
-          <Text style={styles.navText}>Doctor</Text>
+          <Text style={styles.navText}>MyHealth</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Schedule')}>
           <Image source={imagePathSchedul} style={styles.navIcon} />

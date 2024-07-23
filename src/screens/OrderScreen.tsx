@@ -175,7 +175,7 @@ const OrderFormScreen: React.FC<OrderFormScreenProps> = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Doctor')}>
           <Image source={imagePathDoctor} style={styles.logo5} />
-          <Text style={styles.nav1Text}>Doctor</Text>
+          <Text style={styles.nav1Text}>MyHealth</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Schedule')}>
           <Image source={imagePathSchedul} style={styles.logo5} />
